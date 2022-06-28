@@ -7,5 +7,13 @@
 
 <ul>
   <li>Nom : {{ stagiaire.nom }}</li>
-  <li>Prénom : {{ stagiaire.prenom }}</li>
+  <li>Prénom : {{ stagiaire.prenom ?? "prénom indéfini" }}</li>
 </ul>
+<p>{{ stagiaire | json }} </p>
+<ul>
+  <li>{{ tab[0] }}</li>
+  <li>{{ tab["1"] }}</li>
+  <li>{{ tab['2'] }}</li>
+  <li>{{ tab[3] }}</li>
+</ul>
+<p>{{ direBonjour() }}</p>

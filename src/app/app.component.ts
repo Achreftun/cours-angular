@@ -8,5 +8,9 @@ import { Stagiaire } from './classes/stagiaire';
 })
 export class AppComponent {
   title = 'cours-angular';
-  stagiaire: Stagiaire = new Stagiaire(100, "Wick", "John");
+  stagiaire: Stagiaire = new Stagiaire(100, "Wick");
+  tab: number[] = [2, 3, 8, 5];
+  direBonjour() {
+    return "Bonjour";
+  }
 }
