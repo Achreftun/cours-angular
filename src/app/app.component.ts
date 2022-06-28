@@ -10,6 +10,12 @@ export class AppComponent {
   title = 'cours-angular';
   stagiaire: Stagiaire = new Stagiaire(100, "Wick");
   tab: number[] = [2, 3, 8, 5];
+  stagiaires: Array<Stagiaire> = [
+    new Stagiaire(100, 'Wick', 'John'),
+    new Stagiaire(101, 'Abruzzi', 'John'),
+    new Stagiaire(102, 'Marley', 'Bob'),
+    new Stagiaire(103, 'Segal', 'Steven')
+  ];
   direBonjour() {
     return "Bonjour";
   }
