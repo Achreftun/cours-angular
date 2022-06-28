@@ -39,3 +39,8 @@
     {{ i }} : {{ elt }} : {{ isFirst}} : {{ estPair }}
   </li>
 </ul>
+<ul>
+  <li *ngFor="let elt of stagiaires">
+    {{ elt.nom }} {{ elt.prenom }}
+  </li>
+</ul>
