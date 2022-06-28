@@ -167,3 +167,8 @@
 <p [ngClass]="heure > 5 ? 'rouge' : 'bleu'">
   {{ title }}
 </p>
+<ul>
+  <li *ngFor="let elt of tab" [ngClass]="elt % 2 == 0  ? 'bleu' : 'rouge'">
+    {{ elt }}
+  </li>
+</ul>
