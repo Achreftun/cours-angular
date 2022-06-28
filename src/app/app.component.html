@@ -101,3 +101,42 @@
     </ng-template>
   </li>
 </ul>
+<ul>
+  <ng-container *ngFor="let elt of tab">
+    <ng-container [ngSwitch]="elt">
+      <li *ngSwitchCase="1">
+        {{ elt }} : un
+      </li>
+      <li *ngSwitchCase="2">
+        {{ elt }} : deux
+      </li>
+      <li *ngSwitchCase="3">
+        {{ elt }} : trois
+      </li>
+      <li *ngSwitchCase="4">
+        {{ elt }} : quatre
+      </li>
+      <li *ngSwitchDefault>
+        {{ elt }} : autre
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>
+<ul>
+  <ng-container *ngFor="let elt of moyennes">
+    <ng-container [ngSwitch]="true">
+      <li *ngSwitchCase="elt < 10">
+        {{ elt }} : échec
+      </li>
+      <li *ngSwitchCase="elt < 13 && elt >= 10">
+        {{ elt }} : moyen
+      </li>
+      <li *ngSwitchCase="elt < 16 && elt >= 13">
+        {{ elt }} : bien
+      </li>
+      <li *ngSwitchDefault>
+        {{ elt }} : très bien
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>
