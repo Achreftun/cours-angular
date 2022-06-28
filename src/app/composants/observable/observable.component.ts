@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { filter, interval, map, Observable, Observer, take, count, Subject, BehaviorSubject } from 'rxjs';
+import { filter, interval, map, Observable, Observer, take, count, Subject, BehaviorSubject, ReplaySubject } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -15,17 +15,18 @@ export class ObservableComponent implements OnInit {
     // const observable: Observable<number> = interval(1000).pipe(
     //   take(5),
     // );
-    const subject = new BehaviorSubject<number>(0);
-   // subject.next(0);
+    const subject = new ReplaySubject<number>(2);
+    subject.next(0);
     subject.subscribe({
       next: (val) => console.log(`A : ${val}`)
     });
     subject.next(1);
+    subject.next(2);
     subject.subscribe({
       next: (val) => console.log(`B : ${val}`)
     });
     // observable.subscribe(subject);
-    subject.next(2);
+    subject.next(3);
     // const observable: Observable<number> = interval(1000).pipe(
     //   take(15),
     //   filter(elt => elt % 2 == 0 && elt >= 10 && elt < 15),
