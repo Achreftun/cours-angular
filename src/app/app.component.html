@@ -21,3 +21,10 @@
 <p [textContent]="title" [id]="title"></p>
 <p [id]="title"> {{ title }}</p>
 <p id="{{ title }}"> {{ title }}</p>
+<!-- ul>li*3 : crée une liste avec 3 item-->
+<h2>Event binding</h2>
+<div>
+  <button (click)="afficherBonjour()">
+    cliquer
+  </button>
+</div>

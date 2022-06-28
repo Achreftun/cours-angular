@@ -13,4 +13,7 @@ export class AppComponent {
   direBonjour() {
     return "Bonjour";
   }
+  afficherBonjour() {
+    console.log("Bonjour")
+  }
 }
