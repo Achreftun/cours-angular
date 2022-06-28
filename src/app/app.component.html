@@ -60,5 +60,44 @@
       {{ elt }} est impair
     </ng-template>
   </li>
-
+</ul>
+<ul>
+  <li *ngFor="let elt of moyennes">
+    <ng-container *ngIf="elt < 10; else moyen">
+      {{ elt }} : échec
+    </ng-container>
+    <ng-template #moyen>
+      <ng-container *ngIf="elt < 13; else bien">
+        {{ elt }} : moyen
+      </ng-container>
+      <ng-template #bien>
+        <ng-container *ngIf="elt < 16; else tresbien">
+          {{ elt }} : bien
+        </ng-container>
+        <ng-template #tresbien>
+          {{ elt }} : très bien
+        </ng-template>
+      </ng-template>
+    </ng-template>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of moyennes">
+    <ng-container *ngIf="elt < 10; else moyen">
+      {{ elt }} : échec
+    </ng-container>
+    <ng-template #moyen>
+      <ng-container *ngIf="elt < 13; else bien">
+        {{ elt }} : moyen
+      </ng-container>
+    </ng-template>
+    <ng-template #bien>
+      <ng-container *ngIf="elt < 16; else tresbien">
+        {{ elt }} : bien
+      </ng-container>
+    </ng-template>
+    <ng-template #tresbien>
+      {{ elt }} : très bien
+    </ng-template>
+  </li>
 </ul>
