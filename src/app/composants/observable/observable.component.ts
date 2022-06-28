@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Observable, Observer } from 'rxjs';
+import { filter, interval, map, Observable, Observer, take } from 'rxjs';
 
 @Component({
   selector: 'app-observable',
@@ -12,13 +12,23 @@ export class ObservableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    const observable: Observable<number> = interval(2000);
-    const observer: Observer<number> = {
+    const observable: Observable<number> = interval(1000).pipe(
+      take(10),
+      map(elt => elt + 3),
+      filter(elt => elt % 2 == 0)
+    );
+    // écriture récurrente
+    observable.subscribe({
       next: (val) => this.tab.push(val),
       error: (err) => this.status = err,
       complete: () => this.status = 'fini'
-    }
-    observable.subscribe(observer);
+    });
+    // const observer: Observer<number> = {
+    //   next: (val) => this.tab.push(val),
+    //   error: (err) => this.status = err,
+    //   complete: () => this.status = 'fini'
+    // }
+    // observable.subscribe(observer);
   }
 
 }
