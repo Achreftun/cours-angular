@@ -12,21 +12,30 @@ export class ObservableComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    // const observable: Observable<number> = interval(1000).pipe(
-    //   take(5),
-    // );
-    const subject = new ReplaySubject<number>(2);
-    subject.next(0);
+    const subject = new BehaviorSubject(0);
     subject.subscribe({
-      next: (val) => console.log(`A : ${val}`)
+      next: (value) => console.log(`A : ${value}`)
     });
     subject.next(1);
     subject.next(2);
     subject.subscribe({
-      next: (val) => console.log(`B : ${val}`)
+      next: (value) => console.log(`B : ${value}`)
     });
-    // observable.subscribe(subject);
     subject.next(3);
+    // const observable: Observable<number> = interval(1000).pipe(
+    //   take(5),
+    // );
+    // const subject = new ReplaySubject<number>(2);
+    // subject.next(0);
+    // subject.subscribe({
+    //   next: (value) => console.log(`A : ${value}`)
+    // });
+    // subject.next(1);
+    // subject.next(2);
+    // subject.subscribe({
+    //   next: (value) => console.log(`B : ${value}`)
+    // });
+    // subject.next(3);
     // const observable: Observable<number> = interval(1000).pipe(
     //   take(15),
     //   filter(elt => elt % 2 == 0 && elt >= 10 && elt < 15),
