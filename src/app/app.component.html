@@ -29,6 +29,7 @@
   </button>
 </div>
 <h2>Directives</h2>
+<h3>*ngFor</h3>
 <ul>
   <li *ngFor="let elt of tab, let i=index">
     {{ i }} : {{ elt }}
@@ -44,3 +45,9 @@
     {{ elt.nom }} {{ elt.prenom }}
   </li>
 </ul>
+<h3>*ngIf</h3>
+<p *ngIf="tab[0] % 2 == 0"> {{ tab[0] }} est pair</p>
+<p *ngIf="tab[1] % 2 == 0; else impair"> {{ tab[1] }} est pair</p>
+<ng-template #impair>
+  <p>{{ tab[1] }} est impair</p>
+</ng-template>
