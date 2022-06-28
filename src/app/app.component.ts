@@ -7,6 +7,7 @@ import { Stagiaire } from './classes/stagiaire';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  heure = 4;
   title = 'cours-angular';
   couleur = "white";
   couleurBg = "red";

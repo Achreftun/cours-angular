@@ -154,3 +154,16 @@
 <p [ngStyle]="{backgroundColor: getBgColor(),  color: getColor()}">
   {{ title }}
 </p>
+<h3>ngClass</h3>
+<p [ngClass]="{'rouge': true}">
+  {{ title }}
+</p>
+<p [ngClass]="{'rouge': heure > 5}">
+  {{ title }}
+</p>
+<p [ngClass]="{'rouge': heure > 5, 'bleu' : heure < 5}">
+  {{ title }}
+</p>
+<p [ngClass]="heure > 5 ? 'rouge' : 'bleu'">
+  {{ title }}
+</p>
