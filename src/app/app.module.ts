@@ -4,15 +4,20 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+// module principal d'Angular
+// Par défaut tout est défini dans le module principal
+// dans le module principal, on a un composant principal
+
+// Annotation : Décorateur
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule, // CommonModule + tout ce qui concerne le navigateur
     AppRoutingModule
   ],
-  providers: [],
+  providers: [], // services
   bootstrap: [AppComponent]
 })
 export class AppModule { }
