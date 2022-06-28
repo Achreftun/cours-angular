@@ -4,7 +4,7 @@
   </h1>
 
 </div>
-
+<h2>Interpolation</h2>
 <ul>
   <li>Nom : {{ stagiaire.nom }}</li>
   <li>Prénom : {{ stagiaire.prenom ?? "prénom indéfini" }}</li>
@@ -17,3 +17,7 @@
   <li>{{ tab[3] }}</li>
 </ul>
 <p>{{ direBonjour() }}</p>
+<h2>Property binding</h2>
+<p [textContent]="title" [id]="title"></p>
+<p [id]="title"> {{ title }}</p>
+<p id="{{ title }}"> {{ title }}</p>
