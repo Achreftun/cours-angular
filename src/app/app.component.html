@@ -172,3 +172,8 @@
     {{ elt }}
   </li>
 </ul>
+<ul>
+  <li *ngFor="let elt of stagiaires let i=index" [ngClass]="i % 2 == 0  ? 'bleu' : 'rouge'">
+    {{ elt.nom }} {{ elt.prenom }}
+  </li>
+</ul>
