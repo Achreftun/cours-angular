@@ -51,3 +51,14 @@
 <ng-template #impair>
   <p>{{ tab[1] }} est impair</p>
 </ng-template>
+<ul>
+  <li *ngFor="let elt of tab">
+    <ng-container *ngIf="elt % 2 == 0; else sinon">
+      {{ elt }} est pair
+    </ng-container>
+    <ng-template #sinon>
+      {{ elt }} est impair
+    </ng-template>
+  </li>
+
+</ul>
