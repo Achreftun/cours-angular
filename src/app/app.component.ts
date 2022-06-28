@@ -8,6 +8,8 @@ import { Stagiaire } from './classes/stagiaire';
 })
 export class AppComponent {
   title = 'cours-angular';
+  couleur = "white";
+  couleurBg = "red";
   stagiaire: Stagiaire = new Stagiaire(100, "Wick");
   tab: number[] = [2, 3, 8, 5];
   moyennes: number[] = [18, 5, 11, 15];
@@ -22,5 +24,11 @@ export class AppComponent {
   }
   afficherBonjour() {
     console.log("Bonjour")
+  }
+  getColor() {
+    return this.couleur;
+  }
+  getBgColor() {
+    return this.couleurBg;
   }
 }

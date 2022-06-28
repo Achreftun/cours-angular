@@ -101,6 +101,7 @@
     </ng-template>
   </li>
 </ul>
+<h3>ngSwitch</h3>
 <ul>
   <ng-container *ngFor="let elt of tab">
     <ng-container [ngSwitch]="elt">
@@ -140,3 +141,16 @@
     </ng-container>
   </ng-container>
 </ul>
+<h3>ngStyle</h3>
+<p [style.background-color]="couleurBg">
+  {{ title }}
+</p>
+<p [style.background-color]="couleurBg" [style.color]="couleur">
+  {{ title }}
+</p>
+<p [ngStyle]="{backgroundColor: couleurBg,  color: couleur}">
+  {{ title }}
+</p>
+<p [ngStyle]="{backgroundColor: getBgColor(),  color: getColor()}">
+  {{ title }}
+</p>
