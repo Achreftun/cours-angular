@@ -2,8 +2,10 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-
 </div>
+<app-observable></app-observable>
+
+
 <h2>Interpolation</h2>
 <ul>
   <li>Nom : {{ stagiaire.nom }}</li>
@@ -175,5 +177,11 @@
 <ul>
   <li *ngFor="let elt of stagiaires let i=index" [ngClass]="i % 2 == 0  ? 'bleu' : 'rouge'">
     {{ elt.nom }} {{ elt.prenom }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let elt of stagiaires" [ngClass]="(elt.num ?? 0) % 2  == 0  ? 'bleu' : 'rouge'">
+    {{ elt?.nom }} {{ elt?.prenom }}
   </li>
 </ul>
