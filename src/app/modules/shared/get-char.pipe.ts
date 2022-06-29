@@ -11,3 +11,6 @@ export class GetCharPipe implements PipeTransform {
   }
 
 }
+
+// git log --oneline
+// git checkout idCommit

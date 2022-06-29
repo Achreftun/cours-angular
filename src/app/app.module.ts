@@ -7,7 +7,7 @@ import { MenuComponent } from './composants/menu/menu.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
-import { GetCharPipe } from './pipes/get-char.pipe';
+import { SharedModule } from './modules/shared/shared.module';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -21,11 +21,11 @@ import { GetCharPipe } from './pipes/get-char.pipe';
     ErrorComponent,
     HomeComponent,
     HeaderComponent,
-    GetCharPipe
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [], // services
   bootstrap: [AppComponent]

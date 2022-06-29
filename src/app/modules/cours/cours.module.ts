@@ -5,6 +5,7 @@ import { CoursRoutingModule } from './cours-routing.module';
 import { AdresseComponent } from './adresse/adresse.component';
 import { ObservableComponent } from './observable/observable.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { StagiaireComponent } from './stagiaire/stagiaire.component';
   ],
   imports: [
     CommonModule,
-    CoursRoutingModule
+    CoursRoutingModule,
+    SharedModule
   ]
 })
 export class CoursModule { }
