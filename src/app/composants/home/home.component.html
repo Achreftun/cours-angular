@@ -8,9 +8,9 @@
 <p>{{ maDate | date:'d MM y' }}</p>
 <p>{{ maDate | date:'d MMM y'| uppercase }}</p>
 <ul>
-  <li *ngFor="let elt of stagiaire | keyvalue"> 
+  <li *ngFor="let elt of stagiaire | keyvalue">
     {{ elt.key }} : {{ elt.value }}
-   </li>
+  </li>
 </ul>
 <p>{{ title | getchar }}</p>
 <p>{{ title | getchar:2 }}</p>
@@ -18,9 +18,57 @@
 <p>{{ stagiaire | json }} </p>
 <ul>
   <li *ngFor="let elt of tab | evenvalue">
-  {{ elt }}
+    {{ elt }}
   </li>
-  </ul>
+</ul>
+<ul>
+  <li *ngFor="let elt of title | strtoarray">
+    {{ elt }}
+  </li>
+</ul>
+<!-- 
+c 
+o
+u
+r
+s
+-
+a
+n
+g
+u
+l
+a
+r
+-->
+<ul>
+  <li *ngFor="let elt of title | strtoarray:2">
+    {{ elt }}
+  </li>
+</ul>
+<!-- 
+u
+r
+s
+-
+a
+n
+g
+u
+l
+a
+r
+-->
+<ul>
+  <li *ngFor="let elt of title | strtoarray:2:5">
+    {{ elt }}
+  </li>
+</ul>
+<!-- 
+u
+r
+s
+-->
 <ul>
   <li>{{ tab[0] }}</li>
   <li>{{ tab["1"] }}</li>
