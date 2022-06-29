@@ -1,8 +1,16 @@
 <h1>Home </h1>
-<h2>Interpolation</h2>
+<h2>Interpolation et pipe</h2>
 <ul>
-  <li>Nom : {{ stagiaire.nom }}</li>
+  <li>Nom : {{ stagiaire.nom | uppercase }}</li>
   <li>Prénom : {{ stagiaire.prenom ?? "prénom indéfini" }}</li>
+</ul>
+<p>{{ maDate | date:'d MMM y' }}</p>
+<p>{{ maDate | date:'d MM y' }}</p>
+<p>{{ maDate | date:'d MMM y'| uppercase }}</p>
+<ul>
+  <li *ngFor="let elt of stagiaire | keyvalue"> 
+    {{ elt.key }} : {{ elt.value }}
+   </li>
 </ul>
 <p>{{ stagiaire | json }} </p>
 <ul>
@@ -184,7 +192,7 @@
 <p><a [routerLink]="['/cours/stagiaire', nom, prenom]">Stagiaire avec params 3</a></p>
 <p>
   <a routerLink="/cours/adresse" [queryParams]="{ ville: 'Marseille', codePostal: '13006', rue: 'paradis'}">
-    Adresse avec     paramètres
+    Adresse avec paramètres
   </a>
 </p>
 <button (click)="visiter()">Visiter la page de lionel messi</button>

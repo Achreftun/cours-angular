@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Stagiaire } from 'src/app/classes/stagiaire';
 
@@ -7,18 +7,18 @@ import { Stagiaire } from 'src/app/classes/stagiaire';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   title = 'cours-angular';
 
-
+  maDate= Date.now();
   lienStagiaire = '';
   nom = "wick";
   prenom = 'john';
   heure = 4;
   couleur = "white";
   couleurBg = "red";
-  stagiaire: Stagiaire = new Stagiaire(100, "Wick");
+  stagiaire: Stagiaire = new Stagiaire(100, "Wick", "John");
   tab: number[] = [2, 3, 8, 5];
   moyennes: number[] = [18, 5, 11, 15];
   stagiaires: Array<Stagiaire> = [
@@ -31,6 +31,9 @@ export class HomeComponent implements OnInit {
     this.lienStagiaire = `/cours/stagiaire/${this.nom}/${this.prenom}`;
   }
   ngOnInit(): void {
+  }
+  ngOnDestroy() {
+
   }
   direBonjour() {
     return "Bonjour";

@@ -10,6 +10,7 @@ export class AdresseComponent implements OnInit {
   ville = '';
   codePostal = '';
   rue = "";
+  // constructeur: injection de dépendance et initialisation d'attributs
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
