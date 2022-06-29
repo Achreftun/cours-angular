@@ -9,6 +9,7 @@ import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { MenuComponent } from './composants/menu/menu.component';
 import { CalculComponent } from './composants/calcul/calcul.component';
 import { TableauComponent } from './composants/tableau/tableau.component';
+import { ErrorComponent } from './composants/error/error.component';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -23,7 +24,8 @@ import { TableauComponent } from './composants/tableau/tableau.component';
     StagiaireComponent,
     MenuComponent,
     CalculComponent,
-    TableauComponent
+    TableauComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
