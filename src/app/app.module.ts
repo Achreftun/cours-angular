@@ -7,6 +7,7 @@ import { MenuComponent } from './composants/menu/menu.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
+import { GetCharPipe } from './pipes/get-char.pipe';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -19,7 +20,8 @@ import { HeaderComponent } from './composants/header/header.component';
     MenuComponent,
     ErrorComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    GetCharPipe
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
