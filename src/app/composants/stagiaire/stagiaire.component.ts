@@ -14,10 +14,12 @@ export class StagiaireComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.route.paramMap.subscribe(res => {
-      this.nom = res.get('nom') ?? "";
-      this.prenom = res.get('prenom') ?? "";
-    })
+    // this.route.paramMap.subscribe(res => {
+    //   this.nom = res.get('nom') ?? "";
+    //   this.prenom = res.get('prenom') ?? "";
+    // })
+    this.nom = this.route.snapshot.params['nom'];
+    this.prenom = this.route.snapshot.params['prenom'];
   }
 
 }
