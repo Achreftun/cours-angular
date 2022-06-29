@@ -5,8 +5,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class GetCharPipe implements PipeTransform {
 
-  transform(value: string, ...args: unknown[]): string {
-    return value[0];
+  transform(value: string, ...args: number[]): string {
+    const position = args[0] ?? 0;
+    return value[position];
   }
 
 }
