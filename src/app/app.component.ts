@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Stagiaire } from './classes/stagiaire';
 
 @Component({
@@ -23,7 +24,7 @@ export class AppComponent {
     new Stagiaire(102, 'Marley', 'Bob'),
     new Stagiaire(103, 'Segal', 'Steven')
   ];
-  constructor() {
+  constructor(private router: Router) {
     this.lienStagiaire = `/stagiaire/${this.nom}/${this.prenom}`;
   }
   direBonjour() {
@@ -37,5 +38,9 @@ export class AppComponent {
   }
   getBgColor() {
     return this.couleurBg;
+  }
+  visiter() {
+    // this.router.navigateByUrl('/stagiaire/messi/lionel');
+    this.router.navigate(['/stagiaire', 'messi', 'lionel']);
   }
 }
