@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
     new Stagiaire(103, 'Segal', 'Steven')
   ];
   constructor(private router: Router) {
-    this.lienStagiaire = `/stagiaire/${this.nom}/${this.prenom}`;
+    this.lienStagiaire = `/cours/stagiaire/${this.nom}/${this.prenom}`;
   }
   ngOnInit(): void {
   }
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
   }
   visiter() {
     // this.router.navigateByUrl('/stagiaire/messi/lionel');
-    this.router.navigate(['/stagiaire', 'messi', 'lionel']);
+    this.router.navigate(['/cours/stagiaire', 'messi', 'lionel']);
   }
 
 

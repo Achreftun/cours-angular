@@ -3,16 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ObservableComponent } from './composants/observable/observable.component';
-import { AdresseComponent } from './composants/adresse/adresse.component';
-import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { MenuComponent } from './composants/menu/menu.component';
-import { CalculComponent } from './composants/calcul/calcul.component';
-import { TableauComponent } from './composants/tableau/tableau.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
-import { VehiculeModule } from './modules/vehicule/vehicule.module';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -22,12 +16,7 @@ import { VehiculeModule } from './modules/vehicule/vehicule.module';
 @NgModule({
   declarations: [
     AppComponent,
-    ObservableComponent,
-    AdresseComponent,
-    StagiaireComponent,
     MenuComponent,
-    CalculComponent,
-    TableauComponent,
     ErrorComponent,
     HomeComponent,
     HeaderComponent
