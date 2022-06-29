@@ -22,15 +22,15 @@ const routes: Routes = [
   { path: 'stagiaire', component: StagiaireComponent },
   { path: 'stagiaire/:nom/:prenom', component: StagiaireComponent }, // : pour dire paramètre
   { path: 'observable', component: ObservableComponent },
-  {
-    path: 'vehicule', children: [
-      { path: 'camion', component: CamionComponent }, //  /vehicule/camion
-      { path: 'voiture', component: VoitureComponent }, //  /vehicule/voiture
-      { path: '', component: VoitureComponent } // /vehicule
-    ]
-  },
+  // {
+  //   path: 'vehicule', children: [
+  //     { path: 'camion', component: CamionComponent }, //  /vehicule/camion
+  //     { path: 'voiture', component: VoitureComponent }, //  /vehicule/voiture
+  //     { path: '', component: VoitureComponent } // /vehicule
+  //   ]
+  // },
   { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: 'error' }
+  // { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({
@@ -38,3 +38,6 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
+// x/y/z => composant c1
+// route x/y/z/c1
