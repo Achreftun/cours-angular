@@ -9,6 +9,7 @@ import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 const routes: Routes = [
   { path: 'adresse', component: AdresseComponent },
   { path: 'stagiaire', component: StagiaireComponent },
+  { path: 'stagiaire/:nom/:prenom', component: StagiaireComponent }, // : pour dire paramètre
   { path: 'observable', component: ObservableComponent },
 ];
 
