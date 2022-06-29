@@ -184,4 +184,8 @@
     {{ elt?.nom }} {{ elt?.prenom }}
   </li>
 </ul>
+<h2>Liens avec paramètres</h2>
+<p><a routerLink="{{ lienStagiaire }}">Stagiaire avec params 1</a></p>
+<p><a [routerLink]="['/stagiaire', nom, prenom]">Stagiaire avec params 2</a></p>
+
 

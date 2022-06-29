@@ -7,6 +7,9 @@ import { Stagiaire } from './classes/stagiaire';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+  lienStagiaire = '';
+  nom = "wick";
+  prenom = 'john';
   heure = 4;
   title = 'cours-angular';
   couleur = "white";
@@ -20,6 +23,9 @@ export class AppComponent {
     new Stagiaire(102, 'Marley', 'Bob'),
     new Stagiaire(103, 'Segal', 'Steven')
   ];
+  constructor() {
+    this.lienStagiaire = `/stagiaire/${this.nom}/${this.prenom}`;
+  }
   direBonjour() {
     return "Bonjour";
   }
