@@ -17,6 +17,11 @@
 <p>{{ title | getchar:5 }}</p>
 <p>{{ stagiaire | json }} </p>
 <ul>
+  <li *ngFor="let elt of tab | evenValue">
+  {{ elt }}
+  </li>
+  </ul>
+<ul>
   <li>{{ tab[0] }}</li>
   <li>{{ tab["1"] }}</li>
   <li>{{ tab['2'] }}</li>
