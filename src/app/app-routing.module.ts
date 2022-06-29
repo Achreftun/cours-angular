@@ -22,15 +22,12 @@ const routes: Routes = [
   { path: 'stagiaire', component: StagiaireComponent },
   { path: 'stagiaire/:nom/:prenom', component: StagiaireComponent }, // : pour dire paramètre
   { path: 'observable', component: ObservableComponent },
-  // {
-  //   path: 'vehicule', children: [
-  //     { path: 'camion', component: CamionComponent }, //  /vehicule/camion
-  //     { path: 'voiture', component: VoitureComponent }, //  /vehicule/voiture
-  //     { path: '', component: VoitureComponent } // /vehicule
-  //   ]
-  // },
+  {
+    path: 'vehicule',
+    loadChildren: () => import('./modules/vehicule/vehicule.module').then(m => m.VehiculeModule)
+  },
   { path: 'error', component: ErrorComponent },
-  // { path: '**', redirectTo: 'error' }
+  { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({

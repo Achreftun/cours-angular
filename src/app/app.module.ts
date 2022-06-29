@@ -34,7 +34,7 @@ import { VehiculeModule } from './modules/vehicule/vehicule.module';
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
-    AppRoutingModule, VehiculeModule
+    AppRoutingModule
   ],
   providers: [], // services
   bootstrap: [AppComponent]
