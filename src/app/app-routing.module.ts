@@ -8,6 +8,8 @@ import { HomeComponent } from './composants/home/home.component';
 import { ObservableComponent } from './composants/observable/observable.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { TableauComponent } from './composants/tableau/tableau.component';
+import { CamionComponent } from './modules/vehicule/camion/camion.component';
+import { VoitureComponent } from './modules/vehicule/voiture/voiture.component';
 
 
 // mapping path component
@@ -20,8 +22,15 @@ const routes: Routes = [
   { path: 'stagiaire', component: StagiaireComponent },
   { path: 'stagiaire/:nom/:prenom', component: StagiaireComponent }, // : pour dire paramètre
   { path: 'observable', component: ObservableComponent },
+  {
+    path: 'vehicule', children: [
+      { path: 'camion', component: CamionComponent }, //  /vehicule/camion
+      { path: 'voiture', component: VoitureComponent }, //  /vehicule/voiture
+      { path: '', component: VoitureComponent } // /vehicule
+    ]
+  },
   { path: 'error', component: ErrorComponent },
-  { path: '**', redirectTo: 'error'}
+  { path: '**', redirectTo: 'error' }
 ];
 
 @NgModule({

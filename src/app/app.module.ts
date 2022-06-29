@@ -12,6 +12,7 @@ import { TableauComponent } from './composants/tableau/tableau.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
+import { VehiculeModule } from './modules/vehicule/vehicule.module';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -33,9 +34,13 @@ import { HeaderComponent } from './composants/header/header.component';
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
-    AppRoutingModule
+    AppRoutingModule, VehiculeModule
   ],
   providers: [], // services
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  constructor() {
+    console.log('app module')
+  }
+}
