@@ -8,5 +8,5 @@ import { Stagiaire } from './classes/stagiaire';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'cours-angular';
+
 }

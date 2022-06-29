@@ -11,6 +11,7 @@ import { CalculComponent } from './composants/calcul/calcul.component';
 import { TableauComponent } from './composants/tableau/tableau.component';
 import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
+import { HeaderComponent } from './composants/header/header.component';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -27,7 +28,8 @@ import { HomeComponent } from './composants/home/home.component';
     CalculComponent,
     TableauComponent,
     ErrorComponent,
-    HomeComponent
+    HomeComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
