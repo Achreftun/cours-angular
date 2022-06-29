@@ -1,12 +1,12 @@
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({
-  name: 'evenValue'
+  name: 'evenvalue'
 })
 export class EvenValuePipe implements PipeTransform {
 
-  transform(value: unknown, ...args: unknown[]): unknown {
-    return null;
+  transform(value: number[], ...args: unknown[]): number[] {
+    return value.filter(elt => elt % 2 == 0);
   }
 
 }

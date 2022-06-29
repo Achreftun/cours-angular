@@ -14,7 +14,8 @@ import { EvenValuePipe } from './even-value.pipe';
     CommonModule
   ],
   exports: [
-    GetCharPipe
+    GetCharPipe,
+    EvenValuePipe
   ]
 })
 export class SharedModule { }
