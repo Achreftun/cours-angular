@@ -14,6 +14,9 @@ import { CamionComponent } from './camion/camion.component';
   imports: [
     CommonModule,
     VehiculeRoutingModule
+  ],
+  exports: [
+    CamionComponent
   ]
 })
 export class VehiculeModule {
