@@ -17,24 +17,32 @@ export class CalculComponent implements OnInit {
   constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.op = this.route.snapshot.params['op'];
-    this.value1 = +this.route.snapshot.queryParams['value1'];
-    this.value2 = +this.route.snapshot.queryParams['value2'];
-    if (this.op == "plus") {
-      this.resultat = this.value1 + this.value2;
-      this.operateur = '+';
-    } else if (this.op == "moins") {
-      this.resultat = this.value1 - this.value2;
-      this.operateur = '-';
-    } else if (this.op == "fois") {
-      this.resultat = this.value1 * this.value2;
-      this.operateur = '*';
-    } else if (this.op == "div") {
-      this.resultat = this.value1 / this.value2;
-      this.operateur = '/';
-    } else {
-      this.erreur = `operateur ${this.op} inconnu`;
-    }
+    // this.op = this.route.snapshot.params['op'];
+    // this.value1 = +this.route.snapshot.queryParams['value1'];
+    // this.value2 = +this.route.snapshot.queryParams['value2'];
+    this.route.paramMap.subscribe(res => {
+      this.op = res.get('op') ?? "";
+      this.route.queryParamMap.subscribe(result => {
+        this.value1 = +(result.get('value1') ?? 0);
+        this.value2 = +(result.get('value2') ?? 0);
+        if (this.op == "plus") {
+          this.resultat = this.value1 + this.value2;
+          this.operateur = '+';
+        } else if (this.op == "moins") {
+          this.resultat = this.value1 - this.value2;
+          this.operateur = '-';
+        } else if (this.op == "fois") {
+          this.resultat = this.value1 * this.value2;
+          this.operateur = '*';
+        } else if (this.op == "div") {
+          this.resultat = this.value1 / this.value2;
+          this.operateur = '/';
+        } else {
+          this.erreur = `Opérateur ${this.op} inconnu`;
+        }
+      })
+    })
+
   }
 
 }
