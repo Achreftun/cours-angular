@@ -1,0 +1,190 @@
+<h1>Home </h1>
+<h2>Interpolation</h2>
+<ul>
+  <li>Nom : {{ stagiaire.nom }}</li>
+  <li>Prénom : {{ stagiaire.prenom ?? "prénom indéfini" }}</li>
+</ul>
+<p>{{ stagiaire | json }} </p>
+<ul>
+  <li>{{ tab[0] }}</li>
+  <li>{{ tab["1"] }}</li>
+  <li>{{ tab['2'] }}</li>
+  <li>{{ tab[3] }}</li>
+</ul>
+<p>{{ direBonjour() }}</p>
+<h2>Property binding</h2>
+<p [textContent]="title" [id]="title"></p>
+<p [id]="title"> {{ title }}</p>
+<p id="{{ title }}"> {{ title }}</p>
+<!-- ul>li*3 : crée une liste avec 3 item-->
+<h2>Event binding</h2>
+<div>
+  <button (click)="afficherBonjour()">
+    cliquer
+  </button>
+</div>
+<h2>Directives</h2>
+<h3>*ngFor</h3>
+<ul>
+  <li *ngFor="let elt of tab, let i=index">
+    {{ i }} : {{ elt }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of tab, index as i, let isFirst=first, let estPair=even">
+    {{ i }} : {{ elt }} : {{ isFirst}} : {{ estPair }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of stagiaires">
+    {{ elt.nom }} {{ elt.prenom }}
+  </li>
+</ul>
+<h3>*ngIf</h3>
+<p *ngIf="tab[0] % 2 == 0"> {{ tab[0] }} est pair</p>
+<p *ngIf="tab[1] % 2 == 0; else impair"> {{ tab[1] }} est pair</p>
+<ng-template #impair>
+  <p>{{ tab[1] }} est impair</p>
+</ng-template>
+<ul>
+  <li *ngFor="let elt of tab">
+    <ng-container *ngIf="elt % 2 == 0; else sinon">
+      {{ elt }} est pair
+    </ng-container>
+    <ng-template #sinon>
+      {{ elt }} est impair
+    </ng-template>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of moyennes">
+    <ng-container *ngIf="elt < 10; else moyen">
+      {{ elt }} : échec
+    </ng-container>
+    <ng-template #moyen>
+      <ng-container *ngIf="elt < 13; else bien">
+        {{ elt }} : moyen
+      </ng-container>
+      <ng-template #bien>
+        <ng-container *ngIf="elt < 16; else tresbien">
+          {{ elt }} : bien
+        </ng-container>
+        <ng-template #tresbien>
+          {{ elt }} : très bien
+        </ng-template>
+      </ng-template>
+    </ng-template>
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of moyennes">
+    <ng-container *ngIf="elt < 10; else moyen">
+      {{ elt }} : échec
+    </ng-container>
+    <ng-template #moyen>
+      <ng-container *ngIf="elt < 13; else bien">
+        {{ elt }} : moyen
+      </ng-container>
+    </ng-template>
+    <ng-template #bien>
+      <ng-container *ngIf="elt < 16; else tresbien">
+        {{ elt }} : bien
+      </ng-container>
+    </ng-template>
+    <ng-template #tresbien>
+      {{ elt }} : très bien
+    </ng-template>
+  </li>
+</ul>
+<h3>ngSwitch</h3>
+<ul>
+  <ng-container *ngFor="let elt of tab">
+    <ng-container [ngSwitch]="elt">
+      <li *ngSwitchCase="1">
+        {{ elt }} : un
+      </li>
+      <li *ngSwitchCase="2">
+        {{ elt }} : deux
+      </li>
+      <li *ngSwitchCase="3">
+        {{ elt }} : trois
+      </li>
+      <li *ngSwitchCase="4">
+        {{ elt }} : quatre
+      </li>
+      <li *ngSwitchDefault>
+        {{ elt }} : autre
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>
+<ul>
+  <ng-container *ngFor="let elt of moyennes">
+    <ng-container [ngSwitch]="true">
+      <li *ngSwitchCase="elt < 10">
+        {{ elt }} : échec
+      </li>
+      <li *ngSwitchCase="elt < 13 && elt >= 10">
+        {{ elt }} : moyen
+      </li>
+      <li *ngSwitchCase="elt < 16 && elt >= 13">
+        {{ elt }} : bien
+      </li>
+      <li *ngSwitchDefault>
+        {{ elt }} : très bien
+      </li>
+    </ng-container>
+  </ng-container>
+</ul>
+<h3>ngStyle</h3>
+<p [style.background-color]="couleurBg">
+  {{ title }}
+</p>
+<p [style.background-color]="couleurBg" [style.color]="couleur">
+  {{ title }}
+</p>
+<p [ngStyle]="{backgroundColor: couleurBg,  color: couleur}">
+  {{ title }}
+</p>
+<p [ngStyle]="{backgroundColor: getBgColor(),  color: getColor()}">
+  {{ title }}
+</p>
+<h3>ngClass</h3>
+<p [ngClass]="{'rouge': true}">
+  {{ title }}
+</p>
+<p [ngClass]="{'rouge': heure > 5}">
+  {{ title }}
+</p>
+<p [ngClass]="{'rouge': heure > 5, 'bleu' : heure < 5}">
+  {{ title }}
+</p>
+<p [ngClass]="heure > 5 ? 'rouge' : 'bleu'">
+  {{ title }}
+</p>
+<ul>
+  <li *ngFor="let elt of tab" [ngClass]="elt % 2 == 0  ? 'bleu' : 'rouge'">
+    {{ elt }}
+  </li>
+</ul>
+<ul>
+  <li *ngFor="let elt of stagiaires let i=index" [ngClass]="i % 2 == 0  ? 'bleu' : 'rouge'">
+    {{ elt.nom }} {{ elt.prenom }}
+  </li>
+</ul>
+
+<ul>
+  <li *ngFor="let elt of stagiaires" [ngClass]="(elt.num ?? 0) % 2  == 0  ? 'bleu' : 'rouge'">
+    {{ elt?.nom }} {{ elt?.prenom }}
+  </li>
+</ul>
+<h2>Liens avec paramètres</h2>
+<p><a routerLink="{{ lienStagiaire }}">Stagiaire avec params 1</a></p>
+<p><a [routerLink]="lienStagiaire">Stagiaire avec params 2</a></p>
+<p><a [routerLink]="['/stagiaire', nom, prenom]">Stagiaire avec params 3</a></p>
+<p>
+  <a routerLink="/adresse" [queryParams]="{ ville: 'Marseille', codePostal: '13006', rue: 'paradis'}">
+    Adresse avec     paramètres
+  </a>
+</p>
+<button (click)="visiter()">Visiter la page de lionel messi</button>

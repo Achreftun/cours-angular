@@ -10,6 +10,7 @@ import { MenuComponent } from './composants/menu/menu.component';
 import { CalculComponent } from './composants/calcul/calcul.component';
 import { TableauComponent } from './composants/tableau/tableau.component';
 import { ErrorComponent } from './composants/error/error.component';
+import { HomeComponent } from './composants/home/home.component';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -25,7 +26,8 @@ import { ErrorComponent } from './composants/error/error.component';
     MenuComponent,
     CalculComponent,
     TableauComponent,
-    ErrorComponent
+    ErrorComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur

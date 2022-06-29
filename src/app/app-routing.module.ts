@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AppComponent } from './app.component';
 import { AdresseComponent } from './composants/adresse/adresse.component';
 import { CalculComponent } from './composants/calcul/calcul.component';
 import { ErrorComponent } from './composants/error/error.component';
+import { HomeComponent } from './composants/home/home.component';
 import { ObservableComponent } from './composants/observable/observable.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { TableauComponent } from './composants/tableau/tableau.component';
@@ -10,6 +12,7 @@ import { TableauComponent } from './composants/tableau/tableau.component';
 
 // mapping path component
 const routes: Routes = [
+  { path: '', component: HomeComponent },
   { path: 'adresse', component: AdresseComponent },
   { path: 'address', redirectTo: '/adresse' },
   { path: 'calcul/:op', component: CalculComponent },
