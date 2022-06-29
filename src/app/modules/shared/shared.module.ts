@@ -17,7 +17,8 @@ import { StrToArrayPipe } from './str-to-array.pipe';
   ],
   exports: [
     GetCharPipe,
-    EvenValuePipe
+    EvenValuePipe,
+    StrToArrayPipe
   ]
 })
 export class SharedModule { }
