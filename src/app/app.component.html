@@ -186,6 +186,10 @@
 </ul>
 <h2>Liens avec paramètres</h2>
 <p><a routerLink="{{ lienStagiaire }}">Stagiaire avec params 1</a></p>
-<p><a [routerLink]="['/stagiaire', nom, prenom]">Stagiaire avec params 2</a></p>
-
-
+<p><a [routerLink]="lienStagiaire">Stagiaire avec params 2</a></p>
+<p><a [routerLink]="['/stagiaire', nom, prenom]">Stagiaire avec params 3</a></p>
+<p>
+  <a routerLink="/adresse" [queryParams]="{ ville: 'Marseille', codePostal: '13006', rue: 'paradis'}">
+    Adresse avec     paramètres
+  </a>
+</p>
