@@ -3,9 +3,8 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<app-observable></app-observable>
-
-
+<app-menu></app-menu>
+<router-outlet></router-outlet>
 <h2>Interpolation</h2>
 <ul>
   <li>Nom : {{ stagiaire.nom }}</li>
@@ -185,3 +184,4 @@
     {{ elt?.nom }} {{ elt?.prenom }}
   </li>
 </ul>
+
