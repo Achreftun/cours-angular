@@ -6,13 +6,15 @@ import { AdresseComponent } from './adresse/adresse.component';
 import { ObservableComponent } from './observable/observable.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { SharedModule } from '../shared/shared.module';
+import { FormulaireComponent } from './formulaire/formulaire.component';
 
 
 @NgModule({
   declarations: [
     AdresseComponent,
     ObservableComponent,
-    StagiaireComponent
+    StagiaireComponent,
+    FormulaireComponent
   ],
   imports: [
     CommonModule,
