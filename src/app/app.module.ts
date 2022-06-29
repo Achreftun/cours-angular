@@ -7,6 +7,7 @@ import { ObservableComponent } from './composants/observable/observable.componen
 import { AdresseComponent } from './composants/adresse/adresse.component';
 import { StagiaireComponent } from './composants/stagiaire/stagiaire.component';
 import { MenuComponent } from './composants/menu/menu.component';
+import { CalculComponent } from './composants/calcul/calcul.component';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -19,7 +20,8 @@ import { MenuComponent } from './composants/menu/menu.component';
     ObservableComponent,
     AdresseComponent,
     StagiaireComponent,
-    MenuComponent
+    MenuComponent,
+    CalculComponent
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur
