@@ -40,6 +40,7 @@
                 <th>Identifiant</th>
                 <th>Nom</th>
                 <th>Prénom</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -47,6 +48,11 @@
                 <td>{{ elt.id }}</td>
                 <td>{{ elt.nom }}</td>
                 <td>{{ elt.prenom }}</td>
+                <td>
+                    <button (click)="supprimerPersonne()" class="btn">
+                        <i style="color:red" class="fas fa-trash-alt"></i>
+                    </button>
+                </td>
             </tr>
         </tbody>
     </table>

@@ -19,4 +19,7 @@ export class PersonneComponent implements OnInit {
     this.ps.addPersonne({ ...this.personne });
     monForm.reset();
   }
+  supprimerPersonne() {
+
+  }
 }
