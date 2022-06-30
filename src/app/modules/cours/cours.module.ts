@@ -7,7 +7,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormulaireComponent } from './formulaire/formulaire.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 
 
@@ -23,7 +23,8 @@ import { FormComponent } from './form/form.component';
     CommonModule,
     CoursRoutingModule,
     SharedModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class CoursModule { }

@@ -1,1 +1,7 @@
-<p>form works!</p>
+<h2>Formulaire Réactif</h2>
+
+<div>
+    <label for="nom">Nom</label>
+    <input type="text" id="nom" name="nom" [formControl]="nom">
+</div>
+<button (click)="afficherNom()">Cliquer</button>
