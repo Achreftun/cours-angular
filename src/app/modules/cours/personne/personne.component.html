@@ -1,3 +1,37 @@
+<h2 class="container my-5">Formulaire</h2>
+
+<form (ngSubmit)="ajouterPersonne(monForm)" #monForm="ngForm">
+    <div class="container">
+        <div class="mb-3">
+            <label for="id" class="form-label">Identifiant</label>
+            <input type="number" class="form-control" name="id" id="id" [(ngModel)]="personne.id" required min="10"
+                max="1000" #id="ngModel">
+            <div [hidden]="id.valid || id.pristine" class="text-danger text-center">
+                L'identifiant est obligatoire, il faut au moins un chiffre.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="personne.nom" required
+                minlength="2" maxlength="15" #nom="ngModel">
+            <div [hidden]="nom.valid || nom.pristine" class="text-danger text-center">
+                Le nom est obligatoire et il doit contenir au moins 2 caractères et maximum 15.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)]="personne.prenom" required
+                #prenom="ngModel">
+            <div [hidden]="prenom.valid || nom.pristine" class="text-danger text-center">
+                Le prénom est obligatoire, il faut au moins un caractère.
+            </div>
+        </div>
+        <button class="btn btn-primary" [disabled]="monForm.invalid">
+            Ajouter
+        </button>
+    </div>
+</form>
+
 <h2 class="container my-5">Liste de personnes</h2>
 <div class="container mt-3">
     <table class="table table-bordered">

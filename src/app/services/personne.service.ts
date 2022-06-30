@@ -16,4 +16,7 @@ export class PersonneService {
   getPersonnes() {
     return this.personnes;
   }
+  addPersonne(p: Personne) {
+    this.personnes.push(p);
+  }
 }
