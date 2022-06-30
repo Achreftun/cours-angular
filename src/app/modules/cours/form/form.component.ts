@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Personne } from 'src/app/interfaces/personne';
 
 @Component({
   selector: 'app-form',
@@ -18,5 +19,8 @@ export class FormComponent implements OnInit {
   }
   afficherTout() {
     console.log(this.personneForm.value);
+    console.log(this.personneForm.value.nom);
+    console.log(this.personneForm.controls.nom.value);
+    console.log(this.personneForm.get('nom')?.value);
   }
 }
