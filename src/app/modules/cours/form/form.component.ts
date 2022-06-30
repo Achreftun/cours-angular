@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkPrenomValidator } from './validators/personne.validators';
 
 @Component({
@@ -28,7 +28,8 @@ export class FormComponent implements OnInit {
         rue: [],
         codePostal: [],
         ville: [],
-      })
+      }),
+      sports: this.fb.array([]),
     });
   }
 
@@ -51,13 +52,18 @@ export class FormComponent implements OnInit {
   get prenom() {
     return this.personneForm.controls['prenom'];
   }
-
+  get sports() {
+    return this.personneForm.controls['sports'] as FormArray;
+  }
   afficherTout() {
     console.log(this.personneForm.value);
     // console.log(this.personneForm.value.nom);
     // console.log(this.personneForm.controls.nom.value);
     // console.log(this.personneForm.get('nom')?.value);
     this.personneForm.reset()
+  }
+  ajouterSport() {
+    this.sports.push(this.fb.control(''))
   }
 }
 

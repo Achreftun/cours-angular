@@ -48,5 +48,13 @@
             <input type="text" id="ville" name="ville" formControlName="ville">
         </div>
     </div>
+    <div formArrayName="sports">
+        <h3>Sports</h3>
+        <button type="button" (click)="ajouterSport()">Ajouter sport</button>
+        <div *ngFor="let sport of sports.controls; let i=index">
+            <label for="">Sport</label>
+            <input type="text" [formControlName]="i">
+        </div>
+    </div>
     <button [disabled]="!personneForm.valid">Cliquer</button>
 </form>
