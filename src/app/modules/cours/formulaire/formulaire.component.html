@@ -1,22 +1,21 @@
 <h2 class="container">Formulaire</h2>
 
-<form (ngSubmit)="afficherTout()">
+<form (ngSubmit)="afficherTout()" #monForm="ngForm">
     <div class="container">
         <div class="mb-3">
             <label for="id" class="form-label">Identifiant</label>
-            <input type="text" class="form-control" name="id" id="id" [(ngModel)]="personne.id">
+            <input type="text" class="form-control" name="id" id="id" [(ngModel)]="personne.id" required>
         </div>
         <div class="mb-3">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="personne.nom">
+            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="personne.nom" required>
         </div>
         <div class="mb-3">
             <label for="prenom" class="form-label">Prénom</label>
-            <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)]="personne.prenom">
+            <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)]="personne.prenom" required>
         </div>
-        <button class="btn btn-primary">
+        <button class="btn btn-primary" [disabled]="monForm.invalid">
             Afficher tout
         </button>
     </div>
-
 </form>
