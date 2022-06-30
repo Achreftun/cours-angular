@@ -6,6 +6,7 @@ import { TableauComponent } from './tableau/tableau.component';
 import { CalculComponent } from './calcul/calcul.component';
 import { VehiculeModule } from '../vehicule/vehicule.module';
 import { CalculetteComponent } from './calculette/calculette.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CalculetteComponent } from './calculette/calculette.component';
   imports: [
     CommonModule,
     ExerciceRoutingModule,
-    VehiculeModule
+    VehiculeModule,
+    FormsModule
   ]
 })
 export class ExerciceModule { }

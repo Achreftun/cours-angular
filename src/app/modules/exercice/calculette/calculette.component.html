@@ -1,1 +1,40 @@
-<p>calculette works!</p>
+<h2 class="container text-center">Calculette</h2>
+
+<form #monForm="ngForm">
+    <div class="container">
+        <div class="mb-5">
+            <label for="value1" class="form-label mb-5">Valeur 1</label>
+            <input type="number" class="form-control mb-5" name="value1" id="value1" autofocus [(ngModel)]="value1" required>
+        </div>
+        <div class="mb-5">
+            <label for="value2" class="form-label mb-5">Valeur 2</label>
+            <input type="number" class="form-control mb-5" name="value2" id="value2" [(ngModel)]="value2" required>
+        </div>
+        <div class="row mb-5">
+            <div class="offset-1 col-1">
+                <button class="btn" (click)="calculer('+')" [disabled]="monForm.invalid">
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+            <div class="offset-2 col-1">
+                <button class="btn" (click)="calculer('-')" [disabled]="monForm.invalid">
+                    <i class="fas fa-minus"></i>
+                </button>
+            </div>
+            <div class="offset-2 col-1">
+                <button class="btn" (click)="calculer('*')" [disabled]="monForm.invalid">
+                    <i class="fas fa-times"></i>
+                </button>
+
+            </div>
+            <div class="offset-2 col-1">
+                <button class="btn" (click)="calculer('/')" [disabled]="monForm.invalid">
+                    <i class="fas fa-divide"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
+<div id="resultat" class="container text-center my-5">
+    {{ resultat }}
+</div>
