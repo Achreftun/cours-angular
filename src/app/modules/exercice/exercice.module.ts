@@ -6,7 +6,7 @@ import { TableauComponent } from './tableau/tableau.component';
 import { CalculComponent } from './calcul/calcul.component';
 import { VehiculeModule } from '../vehicule/vehicule.module';
 import { CalculetteComponent } from './calculette/calculette.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 
 
@@ -21,7 +21,8 @@ import { CommentaireComponent } from './commentaire/commentaire.component';
     CommonModule,
     ExerciceRoutingModule,
     VehiculeModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class ExerciceModule { }

@@ -1,1 +1,17 @@
-<p>commentaire works!</p>
+<h3>Exercice commentaire</h3>
+<form [formGroup]="personneForm" (ngSubmit)="afficherTout()">
+    Nom : <input type="text" formControlName="nom"><br>
+    Prénom : <input type="text" formControlName="prenom"><br>
+    <div formArrayName="commentaires">
+        <h3>Commentaires</h3>
+        <button type="button" (click)="ajouterCommentaire()">Ajouter commentaire</button>
+        <div *ngFor="let elt of commentaires.controls; let i=index">
+            <div [formGroupName]="i">
+                Titre : <input type="text" formControlName="titre"><br>
+                Catégorie : <input type="text" formControlName="categorie"><br>
+                Contenu : <input type="text" formControlName="contenu"><br>
+            </div>
+        </div>
+    </div>
+    <button>Ajouter personne</button>
+</form>
