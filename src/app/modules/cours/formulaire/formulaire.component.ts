@@ -8,11 +8,13 @@ import { Personne } from 'src/app/interfaces/personne';
 })
 export class FormulaireComponent implements OnInit {
   personne: Personne = {};
+  personnes: Personne[] = [];
   constructor() { }
 
   ngOnInit(): void {
   }
   afficherTout() {
-    console.log(this.personne);
+    this.personnes.push({ ...this.personne });
+    this.personne = {};
   }
 }
