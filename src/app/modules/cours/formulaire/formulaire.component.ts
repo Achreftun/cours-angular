@@ -6,10 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent implements OnInit {
-
+  nom = 'doe';
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  afficherNom(str: string) {
+    this.nom = str;
+  }
 }

@@ -9,7 +9,7 @@ import { HomeComponent } from './composants/home/home.component';
 const routes: Routes = [
   { path: '', component: HomeComponent },
   {
-    path: 'cours',
+    path: 'cours', 
     loadChildren: () => import('./modules/cours/cours.module').then(m => m.CoursModule)
   },
   {

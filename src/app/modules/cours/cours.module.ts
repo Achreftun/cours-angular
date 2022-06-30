@@ -7,6 +7,7 @@ import { ObservableComponent } from './observable/observable.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormulaireComponent } from './formulaire/formulaire.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FormulaireComponent } from './formulaire/formulaire.component';
   imports: [
     CommonModule,
     CoursRoutingModule,
-    SharedModule
+    SharedModule,
+    FormsModule
   ]
 })
 export class CoursModule { }
