@@ -60,8 +60,10 @@ export class FormComponent implements OnInit {
     // console.log(this.personneForm.value.nom);
     // console.log(this.personneForm.controls.nom.value);
     // console.log(this.personneForm.get('nom')?.value);
+    console.log(this.sports.value);
     this.personneForm.reset();
     this.sports.clear();
+
   }
   ajouterSport() {
     this.sports.push(this.fb.control(''))
