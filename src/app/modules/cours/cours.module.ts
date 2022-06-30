@@ -8,6 +8,7 @@ import { StagiaireComponent } from './stagiaire/stagiaire.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormsModule } from '@angular/forms';
+import { FormComponent } from './form/form.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     AdresseComponent,
     ObservableComponent,
     StagiaireComponent,
-    FormulaireComponent
+    FormulaireComponent,
+    FormComponent
   ],
   imports: [
     CommonModule,
