@@ -16,6 +16,5 @@ export class FormulaireComponent implements OnInit {
   afficherTout(monForm: any) {
     this.personnes.push({ ...this.personne });
     monForm.reset();
-    // this.personne = {};
   }
 }
