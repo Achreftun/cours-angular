@@ -1,0 +1,19 @@
+import { Injectable } from '@angular/core';
+import { Personne } from '../interfaces/personne';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class PersonneService {
+  private personnes: Personne[] = [];
+  constructor() {
+    this.personnes = [
+      { id: 1, nom: "wick", prenom: "john" },
+      { id: 2, nom: "dalton", prenom: "jack" },
+      { id: 3, nom: "maggio", prenom: "candice" },
+    ]
+  }
+  getPersonnes() {
+    return this.personnes;
+  }
+}

@@ -11,11 +11,10 @@ export class CommentaireComponent implements OnInit {
   personneForm: FormGroup;
   constructor(private fb: FormBuilder) {
     this.personneForm = fb.group({
-      nom: [],
-      prenom: [],
+      nom: [], // formControl
+      prenom: [], // formControl
       commentaires: this.fb.array([
-
-      ])
+      ]) // formArray
     })
   }
   get commentaires() {

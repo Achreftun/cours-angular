@@ -8,6 +8,7 @@ import { ErrorComponent } from './composants/error/error.component';
 import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
 import { SharedModule } from './modules/shared/shared.module';
+import { PersonneService } from './services/personne.service';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal

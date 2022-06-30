@@ -4,6 +4,7 @@ import { AdresseComponent } from './adresse/adresse.component';
 import { FormComponent } from './form/form.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ObservableComponent } from './observable/observable.component';
+import { PersonneComponent } from './personne/personne.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'stagiaire', component: StagiaireComponent },
   { path: 'stagiaire/:nom/:prenom', component: StagiaireComponent }, // : pour dire paramètre
   { path: 'observable', component: ObservableComponent },
+  { path: 'personne', component: PersonneComponent },
 ];
 
 @NgModule({

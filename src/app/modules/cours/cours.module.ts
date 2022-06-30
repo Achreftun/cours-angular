@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
+import { PersonneComponent } from './personne/personne.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { FormComponent } from './form/form.component';
     ObservableComponent,
     StagiaireComponent,
     FormulaireComponent,
-    FormComponent
+    FormComponent,
+    PersonneComponent
   ],
   imports: [
     CommonModule,
