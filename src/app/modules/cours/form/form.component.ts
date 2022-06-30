@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Personne } from 'src/app/interfaces/personne';
+import { checkPrenomValidator } from './validators/personne.validators';
 
 @Component({
   selector: 'app-form',
@@ -43,13 +44,4 @@ export class FormComponent implements OnInit {
   }
 }
 
-function checkPrenomValidator(control: FormControl): null | object {
-  const str: string = control.value ?? "";
-  if (str[0] >= 'A' && str[0] <= 'Z') {
-    return null;
-  } else {
-    return {
-      majuscule: 'Le prénom doit commencer par une lettre en majuscule'
-    };
-  }
-}
+
