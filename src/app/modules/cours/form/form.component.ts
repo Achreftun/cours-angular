@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { Personne } from 'src/app/interfaces/personne';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { checkPrenomValidator } from './validators/personne.validators';
 
 @Component({
@@ -9,17 +8,27 @@ import { checkPrenomValidator } from './validators/personne.validators';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  personneForm = new FormGroup({
-    id: new FormControl('', Validators.required),
-    nom: new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]),
-    prenom: new FormControl('', [Validators.required, checkPrenomValidator]),
-    adresse: new FormGroup({
-      rue: new FormControl(),
-      codePostal: new FormControl(),
-      ville: new FormControl(),
+  personneForm = this.fb.group({
+    id: ['', Validators.required],
+    nom: ['', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]],
+    prenom: ['', [Validators.required, checkPrenomValidator]],
+    adresse: this.fb.group({
+      rue: [],
+      codePostal: [],
+      ville: [],
     })
   });
-  constructor() { }
+  // personneForm = new FormGroup({
+  //   id: new FormControl('', Validators.required),
+  //   nom: new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]),
+  //   prenom: new FormControl('', [Validators.required, checkPrenomValidator]),
+  //   adresse: new FormGroup({
+  //     rue: new FormControl(),
+  //     codePostal: new FormControl(),
+  //     ville: new FormControl(),
+  //   })
+  // });
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
     // const personne: Personne = { id: 105, nom: "wick", "prenom": "john" };
