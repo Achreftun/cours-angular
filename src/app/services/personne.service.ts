@@ -16,6 +16,9 @@ export class PersonneService {
   getPersonnes() {
     return this.personnes;
   }
+  getPersonneById(id: number) {
+    return this.personnes.find(elt => elt.id == id);
+  }
   addPersonne(p: Personne) {
     this.personnes.push(p);
   }

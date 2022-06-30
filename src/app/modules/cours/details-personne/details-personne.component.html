@@ -1,6 +1,6 @@
-<h2 class="container my-5">Formulaire</h2>
+<h2 class="container my-5">Modifier une personne</h2>
 
-<form (ngSubmit)="ajouterPersonne(monForm)" #monForm="ngForm">
+<form (ngSubmit)="modifierPersonne(monForm)" #monForm="ngForm">
     <div class="container">
         <div class="mb-3">
             <label for="id" class="form-label">Identifiant</label>
@@ -27,36 +27,8 @@
             </div>
         </div>
         <button class="btn btn-primary" [disabled]="monForm.invalid">
-            Ajouter
+            Enregistrer les modifications
         </button>
     </div>
 </form>
 
-<h2 class="container my-5">Liste de personnes</h2>
-<div class="container mt-3">
-    <table class="table table-bordered">
-        <thead>
-            <tr>
-                <th>Identifiant</th>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Action</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let elt of personnes">
-                <td>{{ elt.id }}</td>
-                <td>{{ elt.nom }}</td>
-                <td>{{ elt.prenom }}</td>
-                <td>
-                    <button (click)="supprimerPersonne(elt.id)" class="btn">
-                        <i style="color:red" class="fas fa-trash-alt"></i>
-                    </button>
-                    <a [routerLink]='["/cours/details-personne", elt.id]'>
-                        <i class="fas fa-edit"></i>
-                    </a>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-</div>
