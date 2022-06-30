@@ -33,5 +33,20 @@
             </span>
         </span>
     </div>
+    <div formGroupName="adresse">
+        <h3>Adresse</h3>
+        <div>
+            <label for="rue">Rue</label>
+            <input type="text" id="rue" name="rue" formControlName="rue">
+        </div>
+        <div>
+            <label for="codePostal">Code postal</label>
+            <input type="text" id="codePostal" name="codePostal" formControlName="codePostal">
+        </div>
+        <div>
+            <label for="ville">Ville</label>
+            <input type="text" id="ville" name="ville" formControlName="ville">
+        </div>
+    </div>
     <button [disabled]="!personneForm.valid">Cliquer</button>
 </form>

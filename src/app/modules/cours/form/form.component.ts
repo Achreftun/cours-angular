@@ -13,6 +13,11 @@ export class FormComponent implements OnInit {
     id: new FormControl('', Validators.required),
     nom: new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]),
     prenom: new FormControl('', [Validators.required, checkPrenomValidator]),
+    adresse: new FormGroup({
+      rue: new FormControl(),
+      codePostal: new FormControl(),
+      ville: new FormControl(),
+    })
   });
   constructor() { }
 
@@ -23,7 +28,6 @@ export class FormComponent implements OnInit {
     // this.personneForm.controls.prenom.valueChanges.subscribe(value => {
     //   console.log(value)
     // })
-
   }
 
   get id() {
@@ -35,6 +39,7 @@ export class FormComponent implements OnInit {
   get prenom() {
     return this.personneForm.controls.prenom;
   }
+
   afficherTout() {
     console.log(this.personneForm.value);
     // console.log(this.personneForm.value.nom);
