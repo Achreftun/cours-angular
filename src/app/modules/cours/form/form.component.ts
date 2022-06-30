@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -7,12 +7,16 @@ import { FormControl } from '@angular/forms';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  nom = new FormControl('doe');
+  personneForm = new FormGroup({
+    id: new FormControl(),
+    nom: new FormControl(),
+    prenom: new FormControl(),
+  });
   constructor() { }
 
   ngOnInit(): void {
   }
-  afficherNom() {
-    console.log(this.nom.value);
+  afficherTout() {
+    console.log(this.personneForm.value);
   }
 }
