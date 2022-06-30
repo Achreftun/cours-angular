@@ -13,8 +13,9 @@ export class FormulaireComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  afficherTout() {
+  afficherTout(monForm: any) {
     this.personnes.push({ ...this.personne });
-    this.personne = {};
+    monForm.reset();
+    // this.personne = {};
   }
 }
