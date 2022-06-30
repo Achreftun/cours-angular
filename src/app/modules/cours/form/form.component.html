@@ -1,5 +1,5 @@
 <h2>Formulaire Réactif</h2>
-<form [formGroup]="personneForm">
+<form (ngSubmit)="afficherTout()" [formGroup]="personneForm">
     <div>
         <label for="id">Identifiant</label>
         <input type="text" id="id" name="id" formControlName="id">
@@ -12,5 +12,5 @@
         <label for="prenom">Prénom</label>
         <input type="text" id="prenom" name="prenom" formControlName="prenom">
     </div>
-    <button (click)="afficherTout()">Cliquer</button>
+    <button [disabled]="!personneForm.valid">Cliquer</button>
 </form>
