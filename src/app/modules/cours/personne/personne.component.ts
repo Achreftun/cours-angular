@@ -19,7 +19,8 @@ export class PersonneComponent implements OnInit {
     this.ps.addPersonne({ ...this.personne });
     monForm.reset();
   }
-  supprimerPersonne() {
-
+  supprimerPersonne(id: number = 0) {
+    this.ps.removePersonne(id);
+    this.personnes = this.ps.getPersonnes();
   }
 }

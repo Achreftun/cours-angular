@@ -19,4 +19,8 @@ export class PersonneService {
   addPersonne(p: Personne) {
     this.personnes.push(p);
   }
+  removePersonne(id: number) {
+    // let p = this.personnes.find(elt => elt.id == id);
+    this.personnes = this.personnes.filter(elt => elt.id != id);
+  }
 }
