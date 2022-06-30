@@ -8,16 +8,7 @@ import { checkPrenomValidator } from './validators/personne.validators';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent implements OnInit {
-  personneForm = this.fb.group({
-    id: ['', Validators.required],
-    nom: ['', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]],
-    prenom: ['', [Validators.required, checkPrenomValidator]],
-    adresse: this.fb.group({
-      rue: [],
-      codePostal: [],
-      ville: [],
-    })
-  });
+  personneForm: FormGroup;
   // personneForm = new FormGroup({
   //   id: new FormControl('', Validators.required),
   //   nom: new FormControl('', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]),
@@ -28,9 +19,21 @@ export class FormComponent implements OnInit {
   //     ville: new FormControl(),
   //   })
   // });
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder) {
+    this.personneForm = this.fb.group({
+      id: ['', Validators.required],
+      nom: ['', [Validators.required, Validators.pattern(/^[A-Z][a-z]{2,10}$/)]],
+      prenom: ['', [Validators.required, checkPrenomValidator]],
+      adresse: this.fb.group({
+        rue: [],
+        codePostal: [],
+        ville: [],
+      })
+    });
+  }
 
   ngOnInit(): void {
+
     // const personne: Personne = { id: 105, nom: "wick", "prenom": "john" };
     //  this.personneForm.patchValue({ id: 105, nom: "wick" });
     // this.personneForm.setValue({ id: 105, nom: "wick", "prenom": "john" });
@@ -40,13 +43,13 @@ export class FormComponent implements OnInit {
   }
 
   get id() {
-    return this.personneForm.controls.id;
+    return this.personneForm.controls['id'];
   }
   get nom() {
-    return this.personneForm.controls.nom;
+    return this.personneForm.controls['nom'];
   }
   get prenom() {
-    return this.personneForm.controls.prenom;
+    return this.personneForm.controls['prenom'];
   }
 
   afficherTout() {
