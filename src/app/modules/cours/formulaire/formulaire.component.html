@@ -1,7 +1,22 @@
-<h2>Formulaire</h2>
+<h2 class="container">Formulaire</h2>
 
-<div>
-    <label for="nom">Nom</label>
-    <input type="text" name="nom" id="nom" [(ngModel)]="nom">{{ nom }}
-</div>
+<form (ngSubmit)="afficherTout()">
+    <div class="container">
+        <div class="mb-3">
+            <label for="id" class="form-label">Identifiant</label>
+            <input type="text" class="form-control" name="id" id="id" [(ngModel)]="personne.id">
+        </div>
+        <div class="mb-3">
+            <label for="nom" class="form-label">Nom</label>
+            <input type="text" class="form-control" name="nom" id="nom" [(ngModel)]="personne.nom">
+        </div>
+        <div class="mb-3">
+            <label for="prenom" class="form-label">Prénom</label>
+            <input type="text" class="form-control" name="prenom" id="prenom" [(ngModel)]="personne.prenom">
+        </div>
+        <button class="btn btn-primary">
+            Afficher tout
+        </button>
+    </div>
 
+</form>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Personne } from 'src/app/interfaces/personne';
 
 @Component({
   selector: 'app-formulaire',
@@ -6,12 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./formulaire.component.css']
 })
 export class FormulaireComponent implements OnInit {
-  nom = 'doe';
+  personne: Personne = {};
   constructor() { }
 
   ngOnInit(): void {
   }
-  afficherNom(str: string) {
-    this.nom = str;
+  afficherTout() {
+    console.log(this.personne);
   }
 }
