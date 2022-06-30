@@ -7,13 +7,15 @@ import { CalculComponent } from './calcul/calcul.component';
 import { VehiculeModule } from '../vehicule/vehicule.module';
 import { CalculetteComponent } from './calculette/calculette.component';
 import { FormsModule } from '@angular/forms';
+import { CommentaireComponent } from './commentaire/commentaire.component';
 
 
 @NgModule({
   declarations: [
     TableauComponent,
     CalculComponent,
-    CalculetteComponent
+    CalculetteComponent,
+    CommentaireComponent
   ],
   imports: [
     CommonModule,
