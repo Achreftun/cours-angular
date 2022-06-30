@@ -3,14 +3,35 @@
     <div>
         <label for="id">Identifiant</label>
         <input type="text" id="id" name="id" formControlName="id">
+        <span *ngIf="!(id.valid ||id.pristine) && id.errors">
+            <span *ngIf="id.errors['required']">
+                L'identifiant est obligatoire.
+            </span>
+        </span>
     </div>
     <div>
         <label for="nom">Nom</label>
         <input type="text" id="nom" name="nom" formControlName="nom">
+        <span *ngIf="!(nom.valid ||nom.pristine) && nom.errors">
+            <span *ngIf="nom.errors['required']">
+                Le nom est obligatoire.
+            </span>
+            <span *ngIf="nom.errors['pattern']">
+                Le nom doit contenir entre 3 et 10 caractères (Première lettre en majuscule).
+            </span>
+        </span>
     </div>
     <div>
         <label for="prenom">Prénom</label>
         <input type="text" id="prenom" name="prenom" formControlName="prenom">
+        <span *ngIf="!(prenom.valid ||prenom.pristine) && prenom.errors">
+            <span *ngIf="prenom.errors['required']">
+                Le prénom est obligatoire.
+            </span>
+            <span *ngIf="prenom.errors['majuscule']">
+                {{ prenom.errors['majuscule'] }}
+            </span>
+        </span>
     </div>
     <button [disabled]="!personneForm.valid">Cliquer</button>
 </form>

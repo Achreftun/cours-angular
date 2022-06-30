@@ -24,6 +24,16 @@ export class FormComponent implements OnInit {
     // })
 
   }
+
+  get id() {
+    return this.personneForm.controls.id;
+  }
+  get nom() {
+    return this.personneForm.controls.nom;
+  }
+  get prenom() {
+    return this.personneForm.controls.prenom;
+  }
   afficherTout() {
     console.log(this.personneForm.value);
     // console.log(this.personneForm.value.nom);
@@ -34,7 +44,6 @@ export class FormComponent implements OnInit {
 }
 
 function checkPrenomValidator(control: FormControl): null | object {
-  console.log(control.value)
   const str: string = control.value ?? "";
   if (str[0] >= 'A' && str[0] <= 'Z') {
     return null;
