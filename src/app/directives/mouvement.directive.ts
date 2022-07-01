@@ -6,8 +6,8 @@ import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angula
 export class MouvementDirective {
   @Input('appMouvement') couleur = '';
   @HostBinding('style.backgroundColor') bg = '';
-  
-  constructor() {
+  constructor(private elt: ElementRef) {
+
   }
   @HostListener('mouseenter')
   onMouseEnter() {
