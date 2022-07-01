@@ -22,13 +22,19 @@ export class DetailsPersonneComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(res => {
       this.id = +(res.get('id') ?? "0");
-      this.personne = this.ps.getPersonneById(this.id) ?? {};
+      this.ps.getPersonneById(this.id).subscribe(res => {
+        this.personne = res;
+      })
 
     });
   }
   modifierPersonne(form: any) {
-    this.ps.updatePersonne(this.personne);
-    this.router.navigateByUrl('/cours/personne');
+    // this.ps.updatePersonne(this.personne);
+    // this.router.navigateByUrl('/cours/personne');
+    this.ps.updatePersonne(this.personne).subscribe(res => {
+      this.router.navigateByUrl('/cours/personne');
+    })
+
   }
 
 }

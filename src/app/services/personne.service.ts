@@ -7,21 +7,21 @@ import { Personne } from '../interfaces/personne';
 })
 export class PersonneService {
 
-  private personnes: Personne[] = [];
+  // private personnes: Personne[] = [];
   private url: string = 'http://localhost:5555/personnes';
 
   constructor(private http: HttpClient) {
-    this.personnes = [
-      { id: 1, nom: "wick", prenom: "john" },
-      { id: 2, nom: "dalton", prenom: "jack" },
-      { id: 3, nom: "maggio", prenom: "candice" },
-    ];
+    // this.personnes = [
+    //   { id: 1, nom: "wick", prenom: "john" },
+    //   { id: 2, nom: "dalton", prenom: "jack" },
+    //   { id: 3, nom: "maggio", prenom: "candice" },
+    // ];
   }
   getPersonnes() {
     return this.http.get<Array<Personne>>(this.url);
   }
   getPersonneById(id: number) {
-    return this.personnes.find(elt => elt.id == id);
+    return this.http.get<Personne>(`${this.url}/${id}`);
   }
   addPersonne(p: Personne) {
     // HTTP : POST
@@ -30,11 +30,12 @@ export class PersonneService {
   }
   removePersonne(id: number) {
     // let p = this.personnes.find(elt => elt.id == id);
-   // this.personnes = this.personnes.filter(elt => elt.id != id);
-   return this.http.delete(`${this.url}/${id}`);
+    // this.personnes = this.personnes.filter(elt => elt.id != id);
+    return this.http.delete(`${this.url}/${id}`);
   }
   updatePersonne(p: Personne) {
-    let toBeUpdated = this.personnes.find(elt => elt.id == p.id);
-    toBeUpdated = p;
+    // let toBeUpdated = this.personnes.find(elt => elt.id == p.id);
+    // toBeUpdated = p;
+    return this.http.put<Personne>(`${this.url}/${p.id}`, p);
   }
 }
