@@ -10,6 +10,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentaireComponent } from './commentaire/commentaire.component';
 import { ListComponent } from './list/list.component';
 import { ItemComponent } from './item/item.component';
+import { ClavierComponent } from './clavier/clavier.component';
+import { ToucheComponent } from './touche/touche.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { ItemComponent } from './item/item.component';
     CalculetteComponent,
     CommentaireComponent,
     ListComponent,
-    ItemComponent
+    ItemComponent,
+    ClavierComponent,
+    ToucheComponent
   ],
   imports: [
     CommonModule,
