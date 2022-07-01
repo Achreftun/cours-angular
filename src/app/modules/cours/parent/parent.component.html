@@ -1,1 +1,4 @@
-<p>parent works!</p>
+<h3>Moyenne des enfants {{ moyenne }}</h3>
+<ng-container *ngFor="let elt of noms">
+    <app-child [nom]="elt" (message)="calculerMoyenne($event)"></app-child>
+</ng-container>

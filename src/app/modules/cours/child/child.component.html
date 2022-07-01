@@ -1,1 +1,6 @@
-<p>child works!</p>
+<h4>{{ nom }}</h4>
+
+<input type="number" name="note"  [(ngModel)]="note">
+<button class="btn" (click)="envoyer()" [disabled]="buttonStatus">
+    <i class="fas fa-paper-plane"></i>
+</button>
