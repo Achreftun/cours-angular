@@ -1,1 +1,6 @@
-<p>list works!</p>
+<h2>List/Item (ng-content et @Input)</h2>
+<ul>
+    <app-item *ngFor="let elt of couleurs; let i=index" [couleur]="elt">
+        {{ textes[i] }}
+    </app-item>
+</ul>
