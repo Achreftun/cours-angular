@@ -26,4 +26,8 @@ export class PersonneService {
     // let p = this.personnes.find(elt => elt.id == id);
     this.personnes = this.personnes.filter(elt => elt.id != id);
   }
+  updatePersonne(p: Personne) {
+    let toBeUpdated = this.personnes.find(elt => elt.id == p.id);
+    toBeUpdated = p;
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Personne } from 'src/app/interfaces/personne';
 import { PersonneService } from 'src/app/services/personne.service';
 
@@ -11,7 +11,11 @@ import { PersonneService } from 'src/app/services/personne.service';
 export class DetailsPersonneComponent implements OnInit {
   id = 0;
   personne: Personne = {};
-  constructor(private route: ActivatedRoute, private ps: PersonneService) {
+  constructor(
+    private route: ActivatedRoute,
+    private ps: PersonneService,
+    private router: Router
+  ) {
 
   }
 
@@ -22,6 +26,9 @@ export class DetailsPersonneComponent implements OnInit {
 
     });
   }
-  modifierPersonne(form: any) { }
+  modifierPersonne(form: any) {
+    this.ps.updatePersonne(this.personne);
+    this.router.navigateByUrl('/cours/personne');
+  }
 
 }
