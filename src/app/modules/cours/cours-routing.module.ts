@@ -23,7 +23,6 @@ const routes: Routes = [
   { path: 'details-personne/:id', component: DetailsPersonneComponent },
   { path: 'pere', component: PereComponent },
   { path: 'parent', component: ParentComponent },
-  { path: 'clavier', component: ClavierComponent },
 ];
 
 @NgModule({
