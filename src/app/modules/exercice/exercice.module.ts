@@ -8,6 +8,8 @@ import { VehiculeModule } from '../vehicule/vehicule.module';
 import { CalculetteComponent } from './calculette/calculette.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CommentaireComponent } from './commentaire/commentaire.component';
+import { ListComponent } from './list/list.component';
+import { ItemComponent } from './item/item.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CommentaireComponent } from './commentaire/commentaire.component';
     TableauComponent,
     CalculComponent,
     CalculetteComponent,
-    CommentaireComponent
+    CommentaireComponent,
+    ListComponent,
+    ItemComponent
   ],
   imports: [
     CommonModule,
