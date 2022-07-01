@@ -1,22 +1,23 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import { Directive, ElementRef, HostBinding, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appMouvement]'
 })
 export class MouvementDirective {
   @Input('appMouvement') couleur = '';
-  constructor(private elt: ElementRef) {
-
+  @HostBinding('style.backgroundColor') bg = '';
+  
+  constructor() {
   }
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.changerCouleur(this.couleur);
+    this.bg = this.couleur;
   }
   @HostListener('mouseleave')
   onMouseLeave() {
-    this.changerCouleur('white');
+    this.bg = 'white';
   }
-  changerCouleur(couleur: string) {
-    this.elt.nativeElement.style.backgroundColor = couleur;
-  }
+  // changerCouleur(couleur: string) {
+  //   this.bg = couleur;
+  // }
 }
