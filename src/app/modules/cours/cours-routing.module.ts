@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ClavierComponent } from '../exercice/clavier/clavier.component';
 import { AdresseComponent } from './adresse/adresse.component';
+import { ContainerComponent } from './container/container.component';
 import { DetailsPersonneComponent } from './details-personne/details-personne.component';
 import { FormComponent } from './form/form.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'details-personne/:id', component: DetailsPersonneComponent },
   { path: 'pere', component: PereComponent },
   { path: 'parent', component: ParentComponent },
+  { path: 'container', component: ContainerComponent },
 ];
 
 @NgModule({

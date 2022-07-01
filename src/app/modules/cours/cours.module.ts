@@ -15,6 +15,9 @@ import { PereComponent } from './pere/pere.component';
 import { FilsComponent } from './fils/fils.component';
 import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
+import { ContainerComponent } from './container/container.component';
+import { FirstComponent } from './first/first.component';
+import { SecondComponent } from './second/second.component';
 
 
 @NgModule({
@@ -29,7 +32,10 @@ import { ChildComponent } from './child/child.component';
     PereComponent,
     FilsComponent,
     ParentComponent,
-    ChildComponent
+    ChildComponent,
+    ContainerComponent,
+    FirstComponent,
+    SecondComponent
   ],
   imports: [
     CommonModule,
