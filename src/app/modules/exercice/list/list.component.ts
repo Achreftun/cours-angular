@@ -8,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ListComponent implements OnInit {
   couleurs = ['red', 'blue', 'green'];
   textes = ['hi', 'salut', 'ciao'];
+  couleur = '';
+  texte = '';
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  ajouter(form: any) {
+    this.couleurs.push(this.couleur);
+    this.textes.push(this.texte);
+    form.reset();
+  }
 }

@@ -1,4 +1,31 @@
 <h2>List/Item (ng-content et @Input)</h2>
+
+<form (ngSubmit)="ajouter(monForm)" #monForm="ngForm">
+    <div class="container">
+
+        <div class="mb-3">
+            <label for="texte" class="form-label">texte</label>
+            <input type="text" class="form-control" name="texte" id="texte" [(ngModel)]="texte" required
+                 #texte1="ngModel">
+            <div [hidden]="texte1.valid || texte1.pristine" class="text-danger text-center">
+                Le texte est obligatoire.
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="couleur" class="form-label">couleur</label>
+            <input type="text" class="form-control" name="couleur" id="couleur" [(ngModel)]="couleur" required
+                 #couleur1="ngModel">
+            <div [hidden]="couleur1.valid || couleur1.pristine" class="text-danger text-center">
+                La couleur est obligatoire.
+            </div>
+        </div>
+        <button class="btn btn-primary" [disabled]="monForm.invalid">
+            Ajouter
+        </button>
+    </div>
+</form>
+
+
 <ul>
     <app-item *ngFor="let elt of couleurs; let i=index" [couleur]="elt">
         {{ textes[i] }}
