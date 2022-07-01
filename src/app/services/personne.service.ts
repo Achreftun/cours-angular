@@ -30,7 +30,8 @@ export class PersonneService {
   }
   removePersonne(id: number) {
     // let p = this.personnes.find(elt => elt.id == id);
-    this.personnes = this.personnes.filter(elt => elt.id != id);
+   // this.personnes = this.personnes.filter(elt => elt.id != id);
+   return this.http.delete(`${this.url}/${id}`);
   }
   updatePersonne(p: Personne) {
     let toBeUpdated = this.personnes.find(elt => elt.id == p.id);
