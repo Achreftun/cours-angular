@@ -1,3 +1,8 @@
-<textarea name="" id="" cols="30" rows="10">
-    
+<textarea class="container form-control" name="" id=""  rows="10" readonly >
+    {{ texte }}
 </textarea>
+<div class="container">
+    <div class="row">
+        <app-touche class="col-1" *ngFor="let elt of lettres" [value]="elt" (message)="write($event)"></app-touche>
+    </div>
+</div>
