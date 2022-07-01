@@ -6,7 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./pere.component.css']
 })
 export class PereComponent implements OnInit {
-
+  tab: string[] = ['premier', 'deuxieme', 'troisieme'];
+  nord = 'Lille';
+  sud = 'Marseille';
+  capitale = 'Paris';
   constructor() { }
 
   ngOnInit(): void {
