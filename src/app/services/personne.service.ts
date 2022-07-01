@@ -24,7 +24,9 @@ export class PersonneService {
     return this.personnes.find(elt => elt.id == id);
   }
   addPersonne(p: Personne) {
-    this.personnes.push(p);
+    // HTTP : POST
+    // this.personnes.push(p);
+    return this.http.post<Personne>(this.url, p);
   }
   removePersonne(id: number) {
     // let p = this.personnes.find(elt => elt.id == id);

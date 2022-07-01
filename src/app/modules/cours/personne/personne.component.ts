@@ -16,7 +16,11 @@ export class PersonneComponent implements OnInit {
     this.initPersonnes();
   }
   ajouterPersonne(monForm: any) {
-    this.ps.addPersonne({ ...this.personne });
+    // this.ps.addPersonne({ ...this.personne });
+    this.ps.addPersonne(this.personne).subscribe(res => {
+      // this.personnes.push(res);
+      this.initPersonnes();
+    })
     monForm.reset();
   }
   supprimerPersonne(id: number = 0) {
