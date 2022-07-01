@@ -13,7 +13,7 @@ export class PersonneComponent implements OnInit {
   constructor(private ps: PersonneService) { }
 
   ngOnInit(): void {
-    this.personnes = this.ps.getPersonnes();
+    this.initPersonnes();
   }
   ajouterPersonne(monForm: any) {
     this.ps.addPersonne({ ...this.personne });
@@ -21,6 +21,11 @@ export class PersonneComponent implements OnInit {
   }
   supprimerPersonne(id: number = 0) {
     this.ps.removePersonne(id);
-    this.personnes = this.ps.getPersonnes();
+    this.initPersonnes();
+  }
+  initPersonnes() {
+    this.ps.getPersonnes().subscribe(res => {
+      this.personnes = res;
+    });
   }
 }
