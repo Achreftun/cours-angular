@@ -11,6 +11,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FormComponent } from './form/form.component';
 import { PersonneComponent } from './personne/personne.component';
 import { DetailsPersonneComponent } from './details-personne/details-personne.component';
+import { PereComponent } from './pere/pere.component';
+import { FilsComponent } from './fils/fils.component';
 
 
 @NgModule({
@@ -21,7 +23,9 @@ import { DetailsPersonneComponent } from './details-personne/details-personne.co
     FormulaireComponent,
     FormComponent,
     PersonneComponent,
-    DetailsPersonneComponent
+    DetailsPersonneComponent,
+    PereComponent,
+    FilsComponent
   ],
   imports: [
     CommonModule,

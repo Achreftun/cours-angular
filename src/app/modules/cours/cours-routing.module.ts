@@ -5,6 +5,7 @@ import { DetailsPersonneComponent } from './details-personne/details-personne.co
 import { FormComponent } from './form/form.component';
 import { FormulaireComponent } from './formulaire/formulaire.component';
 import { ObservableComponent } from './observable/observable.component';
+import { PereComponent } from './pere/pere.component';
 import { PersonneComponent } from './personne/personne.component';
 import { StagiaireComponent } from './stagiaire/stagiaire.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'observable', component: ObservableComponent },
   { path: 'personne', component: PersonneComponent },
   { path: 'details-personne/:id', component: DetailsPersonneComponent },
+  { path: 'pere', component: PereComponent },
 ];
 
 @NgModule({
