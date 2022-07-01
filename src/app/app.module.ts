@@ -10,7 +10,7 @@ import { HomeComponent } from './composants/home/home.component';
 import { HeaderComponent } from './composants/header/header.component';
 import { SharedModule } from './modules/shared/shared.module';
 import { PersonneService } from './services/personne.service';
-import { MouvementDirective } from './directives/mouvement.directive';
+import { MouvementDirective } from './modules/shared/directives/mouvement.directive';
 
 // module principal d'Angular
 // Par défaut tout est défini dans le module principal
@@ -24,7 +24,6 @@ import { MouvementDirective } from './directives/mouvement.directive';
     ErrorComponent,
     HomeComponent,
     HeaderComponent,
-    MouvementDirective,
   ],
   imports: [
     BrowserModule, // CommonModule + tout ce qui concerne le navigateur

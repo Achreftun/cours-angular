@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GetCharPipe } from './get-char.pipe';
-import { EvenValuePipe } from './even-value.pipe';
-import { StrToArrayPipe } from './str-to-array.pipe';
+import { GetCharPipe } from './pipes/get-char.pipe';
+import { EvenValuePipe } from './pipes/even-value.pipe';
+import { StrToArrayPipe } from './pipes/str-to-array.pipe';
+import { MouvementDirective } from './directives/mouvement.directive';
 
 
 
@@ -10,7 +11,8 @@ import { StrToArrayPipe } from './str-to-array.pipe';
   declarations: [
     GetCharPipe,
     EvenValuePipe,
-    StrToArrayPipe
+    StrToArrayPipe,
+    MouvementDirective
   ],
   imports: [
     CommonModule
@@ -18,7 +20,8 @@ import { StrToArrayPipe } from './str-to-array.pipe';
   exports: [
     GetCharPipe,
     EvenValuePipe,
-    StrToArrayPipe
+    StrToArrayPipe,
+    MouvementDirective
   ]
 })
 export class SharedModule { }
