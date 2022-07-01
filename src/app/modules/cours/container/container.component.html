@@ -1,7 +1,16 @@
 <div class="container">
     <div class="row">
-        <app-first class="offset-2 col-4"></app-first>
-        <app-second class="offset-2 col-4"></app-second>
+        <div class="offset-4 col-4">
+            <label for="nom">Nom</label>
+            <input type="text" [(ngModel)]="nom">
+            <button (click)="seConnecter()">
+                <i class="fas fa-sign-in-alt"></i>
+            </button>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <app-first *ngFor="let elt of noms" [lastname]="elt" class="offset-1 col-4"></app-first>
     </div>
 </div>
-

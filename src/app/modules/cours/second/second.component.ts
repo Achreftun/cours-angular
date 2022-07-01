@@ -7,13 +7,19 @@ import { MessageService } from 'src/app/services/message.service';
   styleUrls: ['./second.component.css']
 })
 export class SecondComponent implements OnInit {
-  messages: string[] = [];
+  nom = 'Wick';
+  msg = '';
+  messages: Array<{ message: string, id: string }> = [];
   constructor(private ms: MessageService) { }
 
   ngOnInit(): void {
     this.ms.accederMessage().subscribe(res => {
       this.messages.push(res);
-    })
+    });
+  }
+  envoyerMessage() {
+    this.ms.envoyerMessage(this.msg, this.nom);
+    this.msg = '';
   }
 
 }

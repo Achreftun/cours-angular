@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { MessageService } from 'src/app/services/message.service';
 
 @Component({
@@ -7,14 +7,18 @@ import { MessageService } from 'src/app/services/message.service';
   styleUrls: ['./first.component.css']
 })
 export class FirstComponent implements OnInit {
+  @Input('lastname') nom = '';
   msg = '';
+  messages: Array<{ message: string, id: string }> = [];
   constructor(private ms: MessageService) { }
 
   ngOnInit(): void {
+    this.ms.accederMessage().subscribe(res => {
+      this.messages.push(res);
+    });
   }
   envoyerMessage() {
-    this.ms.envoyerMessage(this.msg);
+    this.ms.envoyerMessage(this.msg, this.nom);
     this.msg = '';
-
   }
 }

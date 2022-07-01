@@ -1,6 +1,12 @@
-<h2>Second</h2>
+<h2>{{ nom }}</h2>
+<div>
+    Message : <input type="text" [(ngModel)]="msg">
+    <button class="btn" (click)="envoyerMessage()">
+        <i class="fas fa-paper-plane"></i>
+    </button>
+</div>
 <ul>
     <li *ngFor="let elt of messages">
-        {{ elt }}
+        {{ elt.id }} : {{ elt.message }}
     </li>
 </ul>

@@ -5,11 +5,11 @@ import { Subject } from 'rxjs';
   providedIn: 'root'
 })
 export class MessageService {
-  private subject = new Subject<string>();
+  private subject = new Subject<{ message: string, id: string }>();
   constructor() { }
 
-  envoyerMessage(msg: string) {
-    this.subject.next(msg);
+  envoyerMessage(msg: string, nom: string) {
+    this.subject.next({ message: msg, id: nom });
   }
   accederMessage() {
     return this.subject;

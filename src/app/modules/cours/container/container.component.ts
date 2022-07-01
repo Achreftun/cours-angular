@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./container.component.css']
 })
 export class ContainerComponent implements OnInit {
-
+  noms: string[] = [];
+  nom = "";
   constructor() { }
 
   ngOnInit(): void {
   }
-
+  seConnecter() {
+    this.noms.push(this.nom);
+  }
 }
