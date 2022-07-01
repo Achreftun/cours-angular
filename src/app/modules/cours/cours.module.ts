@@ -13,6 +13,8 @@ import { PersonneComponent } from './personne/personne.component';
 import { DetailsPersonneComponent } from './details-personne/details-personne.component';
 import { PereComponent } from './pere/pere.component';
 import { FilsComponent } from './fils/fils.component';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { FilsComponent } from './fils/fils.component';
     PersonneComponent,
     DetailsPersonneComponent,
     PereComponent,
-    FilsComponent
+    FilsComponent,
+    ParentComponent,
+    ChildComponent
   ],
   imports: [
     CommonModule,
