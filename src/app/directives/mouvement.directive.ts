@@ -1,16 +1,16 @@
-import { Directive, ElementRef, HostListener } from '@angular/core';
+import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
 @Directive({
   selector: '[appMouvement]'
 })
 export class MouvementDirective {
-
+  @Input('appMouvement') couleur = '';
   constructor(private elt: ElementRef) {
 
   }
   @HostListener('mouseenter')
   onMouseEnter() {
-    this.changerCouleur('pink');
+    this.changerCouleur(this.couleur);
   }
   @HostListener('mouseleave')
   onMouseLeave() {
