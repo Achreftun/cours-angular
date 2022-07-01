@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Personne } from '../interfaces/personne';
 
 @Injectable({
@@ -8,7 +9,7 @@ import { Personne } from '../interfaces/personne';
 export class PersonneService {
 
   // private personnes: Personne[] = [];
-  private url: string = 'http://localhost:5555/personnes';
+  private url: string;
 
   constructor(private http: HttpClient) {
     // this.personnes = [
@@ -16,6 +17,8 @@ export class PersonneService {
     //   { id: 2, nom: "dalton", prenom: "jack" },
     //   { id: 3, nom: "maggio", prenom: "candice" },
     // ];
+    const endPoint = environment.endPoint;
+    this.url = `${endPoint}/personnes`;
   }
   getPersonnes() {
     return this.http.get<Array<Personne>>(this.url);
