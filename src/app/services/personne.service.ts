@@ -1,13 +1,15 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Personne } from '../interfaces/personne';
+import { User } from '../interfaces/user';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonneService {
   private url: string = "http://localhost:8080/ws/personnes"
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) {
+  }
 
   getPersonnes() {
     return this.http.get<Personne[]>(this.url);
