@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { User } from 'src/app/interfaces/user';
+import { CommunicateService } from 'src/app/services/communicate.service';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -11,12 +12,17 @@ import { UserService } from 'src/app/services/user.service';
 export class AuthComponent {
   user: User = {}
   erreur: string | null = null
-  constructor(private us: UserService, private router: Router) { }
+  constructor(
+    private us: UserService, 
+    private router: Router,
+    private cs: CommunicateService
+    ) { }
 
   connexion() {
     this.us.checkUser(this.user).subscribe({
       next: result => {
         localStorage.setItem("user", JSON.stringify(result))
+        this.cs.sendValue(this.user.username!)
         this.router.navigateByUrl("/")
       },
       error: () => this.erreur = "Identifiants incorrects"
