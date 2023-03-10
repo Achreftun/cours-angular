@@ -19,13 +19,16 @@ export class AuthComponent {
     ) { }
 
   connexion() {
+    console.log(this.user);
+    
+    
     this.us.checkUser(this.user).subscribe({
       next: result => {
         localStorage.setItem("tokens", JSON.stringify(result))
         this.cs.sendValue(this.us.getUsernameFromToken(result.accessToken!)) 
         this.router.navigateByUrl("/")
       },
-      error: () => this.erreur = "Identifiants incorrects"
+      error: (err) => this.erreur = "Identifiants incorrects" + err
     })
   }
 }

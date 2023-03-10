@@ -22,7 +22,7 @@ export class UserService {
   isExpiredToken(token: string): boolean {
     const decoded: { exp: number } = jwt_decode(token)
     const { exp } = decoded;
-    return exp * 1000 < Date.now()
+    return exp * 1000 < Date.now() ? true : false
   }
   generateTokensFromRefreshToken(token: string) {
     const user: User = { grantType: "refreshToken" , refreshToken: token}

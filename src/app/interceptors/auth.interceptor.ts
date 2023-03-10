@@ -5,47 +5,38 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { EMPTY, Observable } from 'rxjs';
-import { User } from '../interfaces/user';
-import { Token } from '../interfaces/token';
-import { UserService } from '../services/user.service';
+import { Observable } from 'rxjs';
 
+import { UserService } from '../services/user.service';
+import { CommunicateService } from '../services/communicate.service';
+import { Router } from '@angular/router';
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
-
-  constructor(private us: UserService) { }
-
+  constructor(
+    private userService: UserService, 
+    private router: Router) { }
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
-    console.log(request)
-    if (request.url != 'http://localhost:8080/ws/token') {
-      let tokens: Token = JSON.parse(localStorage.getItem('tokens') ?? "")
-      if (this.us.isExpiredToken(tokens.accessToken!)) {
-        // il faut regénérer les tokens à partir de refreshToken
-        this.us.generateTokensFromRefreshToken(tokens.refreshToken!).subscribe({
-          next: res => {
-            tokens = res
-            localStorage.setItem("tokens", JSON.stringify(res))
-            request = request.clone({
-              setHeaders: {
-                'Authorization': 'Bearer ' + tokens.accessToken
-              }
-            })
-            return next.handle(request);
-          },
-          error: erreur => {
-            localStorage.removeItem('tokens')
-            return EMPTY
-          }
-        }
-        )
-      }
+    console.log(request.context);
 
+    if (request.url != 'http://localhost:8080/ws/token') {
+      let tokens = JSON.parse(localStorage.getItem('tokens') ?? "")
+
+      if (this.userService.isExpiredToken(tokens.accessToken)) {
+        this.userService.generateTokensFromRefreshToken(tokens.refreshToken).subscribe(res => {
+          tokens = res;
+          localStorage.setItem('tokens', JSON.stringify(res))
+          this.router.navigateByUrl(request.url)
+        })
+      }
       request = request.clone({
         setHeaders: {
           'Authorization': 'Bearer ' + tokens.accessToken
         }
       })
+
     }
+
+    console.log("envoi")
     return next.handle(request);
   }
 }
