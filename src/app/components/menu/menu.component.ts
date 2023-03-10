@@ -14,7 +14,7 @@ export class MenuComponent implements OnInit {
     this.cs.getValue().subscribe(nom => this.nom = nom)
   }
   signOut() {
-    localStorage.removeItem('user')
+    localStorage.removeItem('tokens')
     this.cs.sendValue(null)
     this.router.navigateByUrl('/auth')
   }

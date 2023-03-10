@@ -10,7 +10,7 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./auth.component.css']
 })
 export class AuthComponent {
-  user: User = {}
+  user: User = { grantType: "password"}
   erreur: string | null = null
   constructor(
     private us: UserService, 
@@ -21,8 +21,8 @@ export class AuthComponent {
   connexion() {
     this.us.checkUser(this.user).subscribe({
       next: result => {
-        localStorage.setItem("user", JSON.stringify(result))
-        this.cs.sendValue(this.user.username!)
+        localStorage.setItem("tokens", JSON.stringify(result))
+        this.cs.sendValue(this.us.getUsernameFromToken(result.accessToken!)) 
         this.router.navigateByUrl("/")
       },
       error: () => this.erreur = "Identifiants incorrects"
